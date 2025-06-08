@@ -1,8 +1,65 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 *::before,
 *::after {
   box-sizing: border-box;}
 body{
     font-family:"Noto Sans TC", sans-serif;
+}
+.content{
+  max-width: 1920px;
+  margin: 0 auto;
+}
+@media(max-width:768px){
+  .content{
+    max-width: 375px;
+  }
 }
 a{
   text-decoration:none;
@@ -11,66 +68,52 @@ a{
 .header{
   display: flex;
   justify-content: center;
-  
-}
-.header a{
+  }
+.header-item{
   color: #000000;
   font-size: 28px;
-  gap: 40px;
-
+  padding:24px 40px;
+  font-weight: 700;
 }
-    .banner:{
+    .banner{
         display:flex;
-        margin: 0 auto;
-        align-items: center;
+        max-width: 1920px;
+        align-items:center;
       }
+      .section1{
+       margin-right: 24px;
+       flex: 1 1 50%;
+      }
+.section1 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;}
   .section2{
-    dispaly:block;
+   padding-bottom:8px;
+  flex: 1 1 50%;
 }
-.banner{
- display:flex;
- margin: 0 auto;
- max-width: 1920px;
-  align-items:center;
-  border:1px solid #6C757D
- }
   @media(max-width:768px){
     .banner{
       flex-direction: column;
       width: 100%;
-      max-width: 375px;}
-    }
-.section1{
- padding-right:24px;
-  flex: 1 1 50%;
- }
+      }
 .section2{
   width:100%;
   padding-bottom:8px;
- }
- @media(max-width:768px){
-  .section1{
- aspect-ratio: 1 / 1;
-   padding-right: 0;
     width: 100%;
-  }
+ }
   .section1 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-     .section2 {
-    text-align: center;
-    width: 100%;
-    padding: 16px 0px;
-  }
- }
+    aspect-ratio: 1 / 1;
+   }
 }
 .title{
   font-size: 28px;
   padding-bottom:8px;
-  max-width: 636px;
-  width:100%
-  height: 42px;
+  font-weight: 700;
 }
 .new{
   font-size: 16px;
@@ -83,18 +126,142 @@ a{
   font-size: 24px;
   padding-right:8px;
    display: inline-block;
+   font-weight: 500;
 }
-.read{
-  border:1px solid #000000;
-    border-radius:40px;
-   color:#000000;
-    font-size: 16px;
-  padding:8px 16px;
-  width: 96px;
-  }
 .time{
   font-size: 16px;
 }
 .item{
  display:flex;
+}
+.card{
+  max-width: 636px;
+  width: 100%;
+  margin:0 auto;
+  line-height: 1.5;
+}
+.card-front{
+ margin-top: 80px;
+}
+.card-front h2{
+  color: #0027D5;
+  font-weight: 700px;
+  font-size: 28px;
+}
+.card .article{
+  font-size: 16px;
+  font-weight:500;
+  margin-bottom: 48px;
+}
+.card h3{
+  font-weight:700;
+  font-size: 20px;
+  margin-bottom: 12px;;
+}
+.card h2{
+  font-weight: 700;
+  font-size: 28px;
+  color: #0027D5;
+  margin-bottom: 24px;
+}
+.card img{
+  margin-bottom: 24px
+   width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.card-list ol{
+list-style-type: decimal;
+list-style-position: inside;
+margin-bottom: 24px;
+}
+.card-list p{
+ margin-bottom: 8px;
+ font-size: 16px;
+ font-weight: 500;
+}
+.card-list span{
+  background:#EDEDED;
+  border-radius:  24px;
+  display: inline-block;
+  padding: 24px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.card-list li{
+  font-size: 16px;
+  font-weight: 500;
+}
+@media(max-width:768px)
+.card{
+max-width:375px;
+}
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+.card-list .item1,.card-list .item2,.card-list .item3{
+list-style-type: disc;
+list-style-position: inside;
+}
+.end{
+list-style-type: disc;
+list-style-position: inside;
+font-size: 16px;
+font-weight: 500;
+margin-bottom: 48px;
+}
+.pages {
+  display: flex;
+  justify-content: space-between; 
+  max-width: 636px;
+}
+.pages a{
+  display: inline-block;
+   display: flex;
+  border-radius: 40px;
+  padding: 8px 16px;
+  color:#6C757D ;
+  border:1px solid #000000;
+  font-size: 16px;
+  text-decoration: none;
+  }
+  .footer{
+   width: 1296px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .footer-row {
+  display: flex;
+  justify-content: space-between; 
+}
+  .footer .item1{
+  font-size: 32px;
+  font-weight: 500;
+  max-width: 500px;
+  margin: 80px 0;
+}
+.footer .item2{
+  display: block;
+  width: 236px;
+}
+.footer .item3{
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  max-width: 100%;
+}
+@media(max-width: 768px){
+  .footer .item1,
+  .footer .item2 {
+  display: none;
+  }
+  .footer .item3 {
+  display: none;
+  
+  }
 }
